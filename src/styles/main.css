@@ -1,0 +1,242 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(120deg, #74ebd5 0%, #ACB6E5 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+}
+
+header h1 {
+    text-align: center;
+    color: #2d3a4b;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #2d3a4b;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #f7fafc;
+    transition: border 0.2s;
+    margin-bottom: 2px;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0;
+    margin: 8px 0 0 0;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #f1c40f;
+    color: #2d3a4b;
+}
+
+.btn-secondary:hover {
+    background: #d4ac0d;
+}
+
+.btn-tertiary {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.btn-tertiary:hover {
+    background: #c0392b;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+    margin: 32px auto 16px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+.hidden {
+    display: none !important;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+#progress {
+    font-weight: 600;
+    color: #2d3a4b;
+}
+
+.timer {
+    background: #007bff;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+
+.timer.warning {
+    background: #e67e22;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 #e67e2240; }
+    70% { box-shadow: 0 0 0 10px #e67e2200; }
+    100% { box-shadow: 0 0 0 0 #e67e2240; }
+}
+
+#question {
+    font-size: 1.2em;
+    color: #2d3a4b;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-container button {
+    background: #f7fafc;
+    color: #2d3a4b;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.btn-container button:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+.btn-container .correct {
+    background: #28a745;
+    color: #fff;
+    border-color: #28a745;
+}
+
+.btn-container .incorrect {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #e74c3c;
+}
+
+#feedback {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 1.1em;
+    font-weight: 600;
+    min-height: 24px;
+}
+
+.result-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+.result-list li {
+    margin-bottom: 8px;
+    color: #2d3a4b;
+    font-size: 1.05em;
+}
+
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 12px 4px;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    #question {
+        font-size: 1em;
+    }
+    .btn-container button {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+}
