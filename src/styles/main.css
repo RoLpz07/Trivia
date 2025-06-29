@@ -31,14 +31,14 @@ h2 {
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 label {
     display: block;
     margin-bottom: 6px;
     color: #2d3a4b;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 input[type="text"],
@@ -46,17 +46,44 @@ input[type="number"],
 select {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
     font-size: 1em;
     background: #f7fafc;
     transition: border 0.2s;
     margin-bottom: 2px;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin_button {
+    opacity: 1;
+    background: #e3eefd;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 0 #007bff00;
+    border: none;
+}
+
+input[type="number"]:focus::-webkit-inner-spin_button,
+input[type="number"]:focus::-webkit-outer-spin_button,
+input[type="number"]:hover::-webkit-inner-spin_button,
+input[type="number"]:hover::-webkit-outer-spin_button {
+    background: #007bff;
+    box-shadow: 0 0 4px #007bff55;
+    border: none;
+    outline: none;
 }
 
 input:focus,
 select:focus {
     border-color: #007bff;
+    box-shadow: 0 0 0 2px #007bff22;
     outline: none;
 }
 
@@ -65,7 +92,7 @@ select:focus {
 .btn-tertiary {
     display: inline-block;
     width: 100%;
-    padding: 12px 0;
+    padding: 10px 10px;
     margin: 8px 0 0 0;
     font-size: 1.1em;
     font-weight: 700;
@@ -220,6 +247,56 @@ select:focus {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+/* Mostrar y personalizar flechitas en input[type="number"] */
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin_button {
+    opacity: 1;
+    background: #e3eefd;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 0 #007bff00;
+    border: none;
+}
+
+input[type="number"]:focus::-webkit-inner-spin_button,
+input[type="number"]:focus::-webkit-outer-spin_button,
+input[type="number"]:hover::-webkit-inner-spin_button,
+input[type="number"]:hover::-webkit-outer-spin_button {
+    background: #007bff;
+    box-shadow: 0 0 4px #007bff55;
+    border: none;
+    outline: none;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+    outline: 2px solid #007bff;
+}
+
+/* Restaurar flechitas en Firefox */
+input[type="number"]::-webkit-input-placeholder { color: #b0b0b0; }
+input[type="number"]::-moz-placeholder { color: #b0b0b0; }
+input[type="number"]:-ms-input-placeholder { color: #b0b0b0; }
+input[type="number"]::placeholder { color: #b0b0b0; }
+
+/* Mostrar flechas en Firefox y darles color al enfocar */
+input[type="number"]:focus::-webkit-outer-spin-button,
+input[type="number"]:focus::-webkit-inner-spin-button {
+    background: #007bff;
+}
+
+input[type="number"]:focus::-webkit-input-placeholder {
+    color: #007bff;
 }
 
 @media (max-width: 600px) {
