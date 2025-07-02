@@ -17,9 +17,8 @@ trivia-game-app
 │   ├── styles
 │   │   └── main.css      # CSS styles for the application
 │   ├── scripts
-│   │   └── app.js        # JavaScript code for game logic
-│   └── assets
-│       └── questions.json # Placeholder for trivia questions
+        └── app.js        # JavaScript code for game logic
+questions
 ├── README.md             # Documentation for the project
 ```
 
@@ -42,9 +41,3 @@ trivia-game-app
 - Each question has a time limit.
 - Points are awarded for each correct answer.
 - The game ends when all questions have been answered or the time runs out.
-
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue for any suggestions or improvements.
-
-## License
-This project is licensed under the MIT License.
