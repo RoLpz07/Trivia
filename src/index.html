@@ -12,16 +12,17 @@
         <header>
             <h1>Trivia Interactiva</h1>
         </header>
-        <section id="config-section">
-            <form id="config-form" autocomplete="off">
+        <!-- Pantalla de configuración -->
+        <section id="setup" class="screen">
+            <form id="setupForm" autocomplete="off">
                 <h2>Configuración del Juego</h2>
                 <div class="form-group">
-                    <label for="player-name">Nombre del jugador</label>
-                    <input type="text" id="player-name" name="player-name" minlength="2" maxlength="20" required placeholder="Tu nombre">
+                    <label for="player">Nombre del jugador</label>
+                    <input type="text" id="player" name="player" minlength="2" maxlength="20" required placeholder="Tu nombre">
                 </div>
                 <div class="form-group">
-                    <label for="question-amount">Cantidad de preguntas</label>
-                    <input type="number" id="question-amount" name="question-amount" min="5" max="20" value="10" required>
+                    <label for="numQuestions">Cantidad de preguntas</label>
+                    <input type="number" id="numQuestions" name="numQuestions" min="5" max="20" value="10" required>
                 </div>
                 <div class="form-group">
                     <label for="difficulty">Dificultad</label>
@@ -46,37 +47,44 @@
             </form>
         </section>
 
-        <section id="loading-section" class="hidden">
+        <!-- Pantalla de carga -->
+        <section id="loading" class="screen hidden">
             <div class="loader"></div>
             <p>Cargando preguntas...</p>
+            <p id="loadError" class="hidden">No se pudieron cargar las preguntas. <button id="btnRetry" class="btn-secondary">Reintentar</button></p>
         </section>
-        <main id="game-area" class="hidden">
+
+        <!-- Pantalla de juego -->
+        <main id="game" class="screen hidden">
             <div class="game-header">
                 <span id="progress"></span>
+                <span id="score"></span>
                 <span id="timer" class="timer"></span>
             </div>
             <section id="question-section">
                 <h2 id="question"></h2>
-                <div id="answer-buttons" class="btn-container"></div>
+                <div id="options" class="btn-container"></div>
             </section>
             <div id="feedback"></div>
         </main>
-        <section id="result-section" class="hidden">
+
+        <!-- Pantalla de resultados -->
+        <section id="results" class="screen hidden">
             <h2>Resultados Finales</h2>
             <ul class="result-list">
-                <li><strong>Jugador:</strong> <span id="result-player"></span></li>
-                <li><strong>Puntuación:</strong> <span id="result-score"></span></li>
-                <li><strong>Correctas:</strong> <span id="result-correct"></span> de <span id="result-total"></span></li>
-                <li><strong>Porcentaje de aciertos:</strong> <span id="result-percent"></span>%</li>
-                <li><strong>Tiempo promedio por pregunta:</strong> <span id="result-avg-time"></span> s</li>
+                <li><strong>Jugador:</strong> <span id="resultPlayer"></span></li>
+                <li><strong>Puntuación:</strong> <span id="resultScore"></span></li>
+                <li><strong>Correctas:</strong> <span id="resultCorrect"></span> de <span id="resultTotal"></span></li>
+                <li><strong>Porcentaje de aciertos:</strong> <span id="resultPercent"></span>%</li>
+                <li><strong>Tiempo promedio por pregunta:</strong> <span id="resultAvgTime"></span> s</li>
             </ul>
             <div class="result-actions">
-                <button id="play-again" class="btn-primary">Jugar de nuevo</button>
-                <button id="change-config" class="btn-secondary">Cambiar configuración</button>
-                <button id="end-game" class="btn-tertiary">Finalizar</button>
+                <button id="btnRestart" class="btn-primary">Jugar de nuevo</button>
+                <button id="btnConfig" class="btn-secondary">Cambiar configuración</button>
+                <button id="btnExit" class="btn-tertiary">Finalizar</button>
             </div>
         </section>
     </div>
-    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
