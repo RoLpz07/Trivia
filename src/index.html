@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Interactiva</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Trivia Interactiva</h1>
+        </header>
+        <!-- Pantalla de configuración -->
+        <section id="setup" class="screen">
+            <form id="setupForm" autocomplete="off">
+                <h2>Configuración del Juego</h2>
+                <div class="form-group">
+                    <label for="player">Nombre del jugador</label>
+                    <input type="text" id="player" name="player" minlength="2" maxlength="20" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="numQuestions">Cantidad de preguntas</label>
+                    <input type="number" id="numQuestions" name="numQuestions" min="5" max="20" value="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="difficulty">Dificultad</label>
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="easy">Fácil</option>
+                        <option value="medium">Medio</option>
+                        <option value="hard">Difícil</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoría</label>
+                    <select id="category" name="category" required>
+                        <option value="mixed">Mixtas</option>
+                        <option value="9">Cultura General</option>
+                        <option value="18">Ciencia: Computación</option>
+                        <option value="21">Deportes</option>
+                        <option value="23">Historia</option>
+                        <option value="22">Geografía</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Comenzar Juego</button>
+            </form>
+        </section>
+
+        <!-- Pantalla de carga -->
+        <section id="loading" class="screen hidden">
+            <div class="loader"></div>
+            <p>Cargando preguntas...</p>
+            <p id="loadError" class="hidden">No se pudieron cargar las preguntas. <button id="btnRetry" class="btn-secondary">Reintentar</button></p>
+        </section>
+
+        <!-- Pantalla de juego -->
+        <main id="game" class="screen hidden">
+            <div class="game-header">
+                <span id="progress"></span>
+                <span id="score"></span>
+                <span id="timer" class="timer"></span>
+            </div>
+            <section id="question-section">
+                <h2 id="question"></h2>
+                <div id="options" class="btn-container"></div>
+            </section>
+            <div id="feedback"></div>
+        </main>
+
+        <!-- Pantalla de resultados -->
+        <section id="results" class="screen hidden">
+            <h2>Resultados Finales</h2>
+            <ul class="result-list">
+                <li><strong>Jugador:</strong> <span id="resultPlayer"></span></li>
+                <li><strong>Puntuación:</strong> <span id="resultScore"></span></li>
+                <li><strong>Correctas:</strong> <span id="resultCorrect"></span> de <span id="resultTotal"></span></li>
+                <li><strong>Porcentaje de aciertos:</strong> <span id="resultPercent"></span>%</li>
+                <li><strong>Tiempo promedio por pregunta:</strong> <span id="resultAvgTime"></span> s</li>
+            </ul>
+            <div class="result-actions">
+                <button id="btnRestart" class="btn-primary">Jugar de nuevo</button>
+                <button id="btnConfig" class="btn-secondary">Cambiar configuración</button>
+                <button id="btnExit" class="btn-tertiary">Finalizar</button>
+            </div>
+        </section>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
